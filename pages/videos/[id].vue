@@ -14,8 +14,9 @@
     </div>
 
     <div class="flex flex-col m-10">
-      <NuxtLink class="hover:underline" v-for="video, index in videoList" to="/">
-        {{ index }} - {{ video.title }}
+      <NuxtLink :class="'hover:text-orange-500 ' + (index + 1 == videoId ? 'text-orange-600' : '')"
+        v-for="video, index in videoList" :to="videoUrl(index + 1)" :key="index">
+        {{ index + 1 }} - {{ video.title }}
       </NuxtLink>
     </div>
   </div>
@@ -37,6 +38,10 @@ const videoList = [
   }
 ]
 
+function videoUrl(videoId: number) {
+  return `/videos/${videoId}`
+}
+
 // When accessing /posts/1, route.params.id will be 1
 console.log(route.params.id)
 
@@ -45,7 +50,7 @@ const videoId = Number(route.params.id)
 if (videoId < 1 || videoId > videoList.length || isNaN(videoId)) {
   // Redirect to the first video if the video_id is invalid
   console.log("Redirecting to the first video")
-  await navigateTo(`/videos/1`)
+  await navigateTo(videoUrl(1))
 }
 
 const video = videoList[videoId - 1] ?? {
