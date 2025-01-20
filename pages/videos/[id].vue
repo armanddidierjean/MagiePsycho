@@ -3,16 +3,38 @@
     <h1 class="text-xl text-center p-4">Video {{ videoId }} - {{ video.title }}</h1>
 
     <div>
-      <iframe v-if="video.type == Type.youtube" width=" 560" height="315"
-        :src="'https://www.youtube-nocookie.com/embed/' + video.url" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-      </iframe>
+      <div v-if="video.type == Type.vimeo">
 
-      <iframe v-if="video.type == Type.vimeo"
-        :src="'https://player.vimeo.com/video/' + video.url + '?autoplay=1&loop=1'" width="640" height="360"
-        frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
-      </iframe>
+        <p>Variante 1 - player de Vimeo dans une iframe</p>
+        <iframe :src="'https://player.vimeo.com/video/' + video.url + '?autoplay=1&loop=1'" width="640" height="360"
+          frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+        </iframe>
+
+        <p class="mt-5">Variante 2 - NuxtScript optimisé pour Vimeo</p>
+        <ScriptVimeoPlayer :id="Number(video.url)" :vimeoOptions="{
+          autoplay: true,
+          loop: true
+        }" trigger="visible">
+        </ScriptVimeoPlayer>
+      </div>
+      <div v-else-if="video.type == Type.youtube">
+
+        <p>Variante 1 - player de Youtube dans une iframe</p>
+
+        <iframe v-if="video.type == Type.youtube" width=" 560" height="315"
+          :src="'https://www.youtube-nocookie.com/embed/' + video.url" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+
+        <p class="mt-5">Variante 2 - NuxtScript optimisé pour Youtube</p>
+
+        <ScriptYouTubePlayer :video-id="video.url" trigger="visible">
+        </ScriptYouTubePlayer>
+      </div>
+
+
+
 
       <iframe v-if="video.type == Type.youtubeShort" width="315" height="560"
         :src="'https://www.youtube-nocookie.com/embed/' + video.url" title="YouTube video player" frameborder="0"
