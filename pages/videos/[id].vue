@@ -2,11 +2,30 @@
   <div>
     <h1 class="text-xl text-center p-4">Video {{ videoId }} - {{ video.title }}</h1>
 
-    <iframe width="560" height="315" :src="video.url" title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div>
+      <iframe v-if="video.type == Type.youtube" width=" 560" height="315"
+        :src="'https://www.youtube-nocookie.com/embed/' + video.url" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+      </iframe>
 
-    <div class="p-4">{{ video.description }}</div>
+      <iframe v-if="video.type == Type.vimeo"
+        :src="'https://player.vimeo.com/video/' + video.url + '?autoplay=1&loop=1'" width="640" height="360"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+      </iframe>
+
+      <iframe v-if="video.type == Type.youtubeShort" width="315" height="560"
+        :src="'https://www.youtube-nocookie.com/embed/' + video.url" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+
+
+    </div>
+
+
+    <div class=" p-4">
+      {{ video.description }}
+    </div>
 
     <div class="flex flex-row justify-items-stretch w-max">
       <UButton :to="String(videoId - 1)" :disabled="videoId <= 1">Vidéo Précédente</UButton>
@@ -25,17 +44,62 @@
 <script setup lang="ts">
 const route = useRoute()
 
+
+enum Type {
+  youtube,
+  vimeo,
+  youtubeShort
+}
+
 const videoList = [
   {
     title: "Première vidéo",
     description: "Description de la vidéo 1",
-    url: "https://www.youtube-nocookie.com/embed/vJG698U2Mvo?si=TjIjxbpFQv4SdqzS",
+    url: "vJG698U2Mvo",
+    type: Type.youtube
   },
   {
     title: "Seconde vidéo",
     description: "Description de la vidéo 2",
-    url: "https://www.youtube-nocookie.com/embed/wkTsl0qZp7g?si=Vbk9LGbKV5eS018q",
-  }
+    url: "wkTsl0qZp7g",
+    type: Type.youtube
+  },
+  {
+    title: "Troisieme vidéo",
+    description: "Description de la vidéo 3",
+    url: "81039224",
+    type: Type.vimeo
+  },
+  {
+    title: "Quatrieme vidéo",
+    description: "Description de la vidéo 4",
+    url: "ERQrgb1YnoM",
+    type: Type.youtube
+  },
+  {
+    title: "Cinquième vidéo",
+    description: "Description de la vidéo 5",
+    url: "v3iPrBrGSJM",
+    type: Type.youtube
+  },
+  {
+    title: "Sixieme vidéo",
+    description: "Description de la vidéo 6",
+    url: "U0q-Lu_5Lr8",
+    type: Type.youtube // TODO maybe use short
+  },
+  {
+    title: "Septieme vidéo",
+    description: "Description de la vidéo 7",
+    url: "SYeeTvitvFU",
+    type: Type.youtube
+  },
+  {
+    title: "Huitieme vidéo",
+    description: "Description de la vidéo 8",
+    url: "aSljSwvsUYk",
+    type: Type.youtubeShort
+  },
 ]
 
 function videoUrl(videoId: number) {
