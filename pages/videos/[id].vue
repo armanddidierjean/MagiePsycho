@@ -1,16 +1,11 @@
 <template>
-  <div>
+  <div class="w-100% px-10 md:px-40 lg:px-80">
     <h1 class="text-xl text-center p-4">Video {{ videoId }} - {{ video.title }}</h1>
 
-    <div>
+    <div class="flex flex-col justify-center">
+
       <div v-if="video.type == Type.vimeo">
 
-        <p>Variante 1 - player de Vimeo dans une iframe</p>
-        <iframe :src="'https://player.vimeo.com/video/' + video.url + '?autoplay=1&loop=1'" width="640" height="360"
-          frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
-        </iframe>
-
-        <p class="mt-5">Variante 2 - NuxtScript optimisé pour Vimeo</p>
         <ScriptVimeoPlayer :id="Number(video.url)" :vimeoOptions="{
           autoplay: true,
           loop: true
@@ -19,22 +14,10 @@
       </div>
       <div v-else-if="video.type == Type.youtube">
 
-        <p>Variante 1 - player de Youtube dans une iframe</p>
-
-        <iframe v-if="video.type == Type.youtube" width=" 560" height="315"
-          :src="'https://www.youtube-nocookie.com/embed/' + video.url" title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-        </iframe>
-
-        <p class="mt-5">Variante 2 - NuxtScript optimisé pour Youtube</p>
-
         <ScriptYouTubePlayer :video-id="video.url" trigger="visible">
         </ScriptYouTubePlayer>
+
       </div>
-
-
-
 
       <iframe v-if="video.type == Type.youtubeShort" width="315" height="560"
         :src="'https://www.youtube-nocookie.com/embed/' + video.url" title="YouTube video player" frameborder="0"
@@ -49,17 +32,21 @@
       {{ video.description }}
     </div>
 
-    <div class="flex flex-row justify-items-stretch w-max">
-      <UButton :to="String(videoId - 1)" :disabled="videoId <= 1">Vidéo Précédente</UButton>
-      <UButton :to="String(videoId + 1)" :disabled="videoId >= videoList.length">Vidéo suivante</UButton>
+    <div class="flex flex-col items-center">
+
+      <div class="flex flex-row justify-items-stretch w-max gap-4">
+        <UButton :to="String(videoId - 1)" :disabled="videoId <= 1">Vidéo Précédente</UButton>
+        <UButton :to="String(videoId + 1)" :disabled="videoId >= videoList.length">Vidéo suivante</UButton>
+      </div>
+
+      <div class="flex flex-col my-5">
+        <NuxtLink :class="'hover:text-orange-500 ' + (index + 1 == videoId ? 'text-orange-600' : '')"
+          v-for="video, index in videoList" :to="videoUrl(index + 1)" :key="index">
+          {{ index + 1 }} - {{ video.title }}
+        </NuxtLink>
+      </div>
     </div>
 
-    <div class="flex flex-col m-10">
-      <NuxtLink :class="'hover:text-orange-500 ' + (index + 1 == videoId ? 'text-orange-600' : '')"
-        v-for="video, index in videoList" :to="videoUrl(index + 1)" :key="index">
-        {{ index + 1 }} - {{ video.title }}
-      </NuxtLink>
-    </div>
   </div>
 </template>
 
