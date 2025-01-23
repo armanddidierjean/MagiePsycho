@@ -70,7 +70,7 @@ const videoList = [
   {
     title: "Seconde vidéo",
     description: "Description de la vidéo 2",
-    url: "wkTsl0qZp7g",
+    url: "Y1ndudvMLpU",
     type: Type.youtube
   },
   {
