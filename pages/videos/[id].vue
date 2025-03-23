@@ -4,20 +4,18 @@
 
     <div class="flex flex-col justify-center items-center">
 
-      <div v-if="video.type == Type.vimeo">
-
+      <div v-if="video.type == Type.vimeo" class="w-full max-w-full flex flex-col items-center">
         <ScriptVimeoPlayer :id="Number(video.url)" :vimeoOptions="{
           autoplay: true,
           loop: true
         }" trigger="visible">
         </ScriptVimeoPlayer>
       </div>
-      <div v-else-if="video.type == Type.youtube">
-
+      <div v-else-if="video.type == Type.youtube" class="w-full max-w-full flex flex-col items-center">
         <ScriptYouTubePlayer :video-id="video.url" trigger="visible">
         </ScriptYouTubePlayer>
-
       </div>
+
 
       <iframe v-if="video.type == Type.youtubeShort" width="315" height="560"
         :src="'https://www.youtube-nocookie.com/embed/' + video.url" title="YouTube video player" frameborder="0"
