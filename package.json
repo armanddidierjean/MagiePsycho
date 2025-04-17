@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "@nuxt/scripts": "^0.9.5",
-    "@nuxt/ui": "^2.21.0",
-    "nuxt": "^3.15.2",
+    "@nuxt/ui": "^3.0.2",
+    "nuxt": "^3.16.2",
+    "tailwindcss": "^4.1.4",
     "vue": "latest",
     "vue-router": "latest"
   }
