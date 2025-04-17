@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.10.0",
-    "@nuxt/scripts": "^0.9.5",
+    "@nuxt/scripts": "^0.11.6",
     "@nuxt/ui": "^3.0.2",
     "nuxt": "^3.16.2",
     "tailwindcss": "^4.1.4",
