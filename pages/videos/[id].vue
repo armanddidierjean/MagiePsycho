@@ -66,6 +66,10 @@
 <script setup lang="ts">
 const route = useRoute()
 
+definePageMeta({
+  layout: 'navbaronly',
+})
+
 
 enum Type {
   youtube,
