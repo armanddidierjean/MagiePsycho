@@ -27,7 +27,7 @@
         <!-- <UIcon name="i-heroicons-bookmark-solid" class="w-5 h-5" /> -->
         <div class="flex flex-row items-center italic">
           <UIcon name="i-heroicons-newspaper" class="w-5 h-5 mr-2" />
-          Chapitre {{ currentChapter }} - page 10
+          Chapitre {{ currentChapter }} - page {{ video.page }}
         </div>
         {{ video.description }}
       </div>
@@ -48,7 +48,8 @@
         <div v-for="chapter in chapters" :key="chapter.title">
           <div class="text-lg font-semibold my-2">Chapitre {{ chapter.number }} : {{ chapter.title }}</div>
           <div class="flex flex-col">
-            <NuxtLink :class="'hover:text-orange-500 ' + (index + 1 == videoId ? 'text-orange-600' : '')"
+            <NuxtLink
+              :class="(index + 1 == videoId ? 'hover:text-red-400 text-red-600 font-medium' : 'hover:text-red-500')"
               v-for="index in chapter.videos" :to="videoUrl(index + 1)" :key="index">
               {{ index + 1 }} - {{ videoList[index]?.title }}
             </NuxtLink>
@@ -115,116 +116,135 @@ const videoList = [
     title: "Expérience de Simon et Chabris",
     description: "Description de la vidéo 1",
     url: "vJG698U2Mvo",
-    type: Type.youtube
+    type: Type.youtube,
+    page: 16
   },
   {
     title: "Expérience de Barnhart et Goldinger",
     description: "Description de la vidéo 2",
     url: "Y1ndudvMLpU",
-    type: Type.youtube
+    type: Type.youtube,
+    page: 28
   },
   {
     title: "Expérience de Simon et Levin",
     description: "Description de la vidéo 3",
     url: "81039224",
-    type: Type.vimeo
+    type: Type.vimeo,
+    page: 36
   },
   {
     title: "Exemple de cécité à un changement progressif",
     description: "Description de la vidéo 4",
     url: "ERQrgb1YnoM",
-    type: Type.youtube
+    type: Type.youtube,
+    page: 40
   },
   {
     title: "Illustration de la cécité au changement par Richard Wiseman",
     description: "Description de la vidéo 5",
     url: "v3iPrBrGSJM",
-    type: Type.youtube
+    type: Type.youtube,
+    page: 42
   },
   {
     title: "L’illusion de la sphère qui lévite",
     description: "Description de la vidéo 6",
     url: "U0q-Lu_5Lr8",
-    type: Type.youtube // TODO maybe use short
+    type: Type.youtube, // TODO maybe use short,
+    page: 62
   },
   {
     title: "L’illusion d’absence responsable d’accidents de la route",
     description: "Description de la vidéo 7",
     url: "SYeeTvitvFU",
-    type: Type.youtube
+    type: Type.youtube,
+    page: 64
   },
   {
     title: "Plusieurs illusions s’appuyant sur de la complétion perceptive",
     description: "Description de la vidéo 8",
     url: "aSljSwvsUYk",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 64
   },
 
   {
     title: "La balle qui disparaît en l’air",
     description: "Description de la vidéo",
     url: "_y5kezYmGS4",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 77
   },
   {
     title: "Faux transfert d’une pièce",
     description: "Description de la vidéo",
     url: "4GXjDL6W2Ns",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 89
   },
   {
     title: "L’illusion de la pièce qui disparaît en l’air",
     description: "Description de la vidéo",
     url: "NYD5A-y3qkE",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 92
   },
   {
     title: "L’illusion du comptage optique",
     description: "Description de la vidéo",
     url: "zZYfNLMiGcY",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 103
   },
   {
     title: "Distribution normale de cartes et comptage optique",
     description: "Description de la vidéo",
     url: "pfhWnr5ICJc",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 107
   },
   {
     title: "Plusieurs tours reposant sur l’erreur de substitution",
     description: "Description de la vidéo",
     url: "_QlHhNZnuU0",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 108
   },
   {
     title: "Exemple de mouvement utilisé au jeu du bonneteau",
     description: "Description de la vidéo",
     url: "jJAxDD4hLCk",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 110
   },
   {
     title: "Première version du tour utilisé par Thomas, Didierjean et Kuhn",
     description: "Description de la vidéo",
     url: "sUF9IPoTfHA",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 122
   },
   {
     title: "Seconde version du tour utilisé par Thomas, Didierjean et Kuhn",
     description: "Description de la vidéo",
     url: "0HNetH8zP38",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 123
   },
   {
     title: "Technique de forçage à l’effeuillage",
     description: "Description de la vidéo",
     url: "9E4Cx6DjfhU",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 147
   },
   {
     title: "Forçage gestuel utilisé par Pailhès et Kuhn",
     description: "Description de la vidéo",
     url: "yhuXIMq-Qrw",
-    type: Type.youtubeShort
+    type: Type.youtubeShort,
+    page: 149
   },
 ]
 
