@@ -9,12 +9,12 @@
     <div class="flex flex-col-reverse gap-10 md:flex-row md:gap-0 items-center justify-center">
       <div class="md:w-2/3 flex flex-col gap-10">
         <div>
-          Illusions prodigieuses, tours de cartes surprenants séances de mentalisme… Que nous apprend la science sur les
+          Illusions prodigieuses, tours de cartes surprenants, séances de mentalisme… Que nous apprend la science sur
+          les
           tours
           de magie ? Peut-on influencer le choix d’une personne à son insu ? Lui faire percevoir ce qui n’existe pas ?
-          Modifier ses souvenirs ? Derrière ces prouesses des prestidigitateurs, se cache un levier fondamental : <span
-            class="text-red-500 font-medium">la
-            psychologie</span>.
+          Modifier ses souvenirs ? Derrière ces prouesses des prestidigitateurs, se cache un levier fondamental : la
+          psychologie.
 
         </div>
         <div>

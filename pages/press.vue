@@ -6,7 +6,7 @@
                 <span class="relative">Si j'avais connu cet ouvrage de mon vivant, j'aurais mieux compris ce que je
                     faisais</span>
             </div>
-            <div class="italic text-right mt-4">Eugène Robert Houdin (1805-1871)</div>
+            <div class="italic text-right mt-4">Jean-Eugène Robert-Houdin (1805-1871)</div>
         </UCard>
     </div>
 

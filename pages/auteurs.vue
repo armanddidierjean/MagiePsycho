@@ -37,7 +37,7 @@ const authors = [
             {
                 icon: 'heroicons:cursor-arrow-rays',
                 url: 'https://laboratoire-psychologie.univ-fcomte.fr/cyril-thomas/',
-                text: 'Laboratoire de psychologie de l\'Université de Franche-Comté'
+                text: 'Laboratoire de psychologie'
             },
             {
                 icon: 'academicons:researchgate-square',
@@ -60,7 +60,7 @@ const authors = [
             {
                 icon: 'heroicons:cursor-arrow-rays',
                 url: 'https://laboratoire-psychologie.univ-fcomte.fr/andre-didierjean/',
-                text: 'Laboratoire de psychologie de l\'Université de Franche-Comté'
+                text: 'Laboratoire de psychologie'
             },
             {
                 icon: 'academicons:researchgate-square',
