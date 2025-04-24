@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center justify-center gap-10">
-    <div class="flex flex-col items-center justify-center">
+    <div class="flex flex-col items-center justify-center text-center">
       <h1 class="text-3xl font-bold">Les secrets de la prestidigitation</h1>
       <h2 class="text-xl font-medium">Comment les magiciens manipulent notre esprit</h2>
     </div>
