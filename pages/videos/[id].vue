@@ -29,7 +29,6 @@
           <UIcon name="i-heroicons-newspaper" class="w-5 h-5 mr-2" />
           Chapitre {{ currentChapter }} - page {{ video.page }}
         </div>
-        {{ video.description }}
       </div>
     </div>
 
