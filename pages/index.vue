@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="md:w-1/3 flex flex-col items-center justify-center">
-        <NuxtImg src="/images/cover.jpg" />
+        <NuxtImg src="/images/cover.jpg" alt="Couverture - Les secrets de la prestidigitation" />
       </div>
     </div>
     <div class="">

@@ -15,6 +15,8 @@ export default defineNuxtConfig({
   site: {
     url: "https://magiepsycho.fr/",
     name: "Les secrets de la prestidigitation",
+    description:
+      "Que nous apprend la science sur les tours de magie ? Un livre de vulgarisation scientifique de Cyril Thomas et André Didierjean.",
     indexable: true,
     defaultLocale: "fr",
   },
