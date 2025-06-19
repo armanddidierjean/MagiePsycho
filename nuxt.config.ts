@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "@nuxt/scripts", "@nuxt/image"],
+  modules: ["@nuxt/ui", "@nuxt/scripts", "@nuxt/image", "@nuxtjs/seo"],
   scripts: {
     registry: {
       umamiAnalytics: {
@@ -12,4 +12,10 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/css/main.css"],
   ssr: true,
+  site: {
+    url: "https://magiepsycho.fr/",
+    name: "Les secrets de la prestidigitation",
+    indexable: true,
+    defaultLocale: "fr",
+  },
 });
