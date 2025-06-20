@@ -49,7 +49,7 @@ const authors = [
     {
         name: 'André Didierjean',
         desc: `André Didierjean est professeur de psychologie
-                cognitive et membre honoraire de l’Institut universitaire de France. Ses recherches portent sur les
+                cognitive et membre senior de l’Institut universitaire de France. Ses recherches portent sur les
                 biais de raisonnement, l’attention, la psychologie de l’expertise, ou encore la perception visuelle.`,
         links: [
             {
