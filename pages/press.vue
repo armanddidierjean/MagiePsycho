@@ -18,7 +18,7 @@
             src="https://embed.radiofrance.fr/francebleu/player?id_diffusion=02b35d00-b2b9-4cf6-b775-29e58e39faa4"
             allow="autoplay"></iframe>
 
-        <UCard class="mb-8">
+        <UCard class="mb-16">
             <div class="flex flex-row gap-4 items-center">
                 <NuxtImg src="images/RFI.svg" height="48" width="48" alt="RFI" />
                 <div class="flex flex-col">
@@ -32,11 +32,16 @@
             </div>
         </UCard>
 
-        <ScriptYouTubePlayer video-id="BkLqjWimIB8" :player-vars="{
-            start: 1990,
-            end: 2409,
-        }" trigger="visible">
-        </ScriptYouTubePlayer>
+
+        <div class="relative w-full pb-[56.25%] mb-8">
+            <div class="absolute top-0 left-0 w-full h-full">
+                <ScriptYouTubePlayer video-id="BkLqjWimIB8" :player-vars="{ start: 1990, end: 2409 }"
+                    trigger="visible" />
+            </div>
+        </div>
+
+
     </div>
+
 
 </template>
