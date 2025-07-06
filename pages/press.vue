@@ -33,15 +33,16 @@
         </UCard>
 
 
-        <div class="relative w-full pb-[56.25%] mb-8">
+        <div class="relative w-full pb-[56.25%] mb-16">
             <div class="absolute top-0 left-0 w-full h-full">
                 <ScriptYouTubePlayer video-id="BkLqjWimIB8" :player-vars="{ start: 1990, end: 2409 }"
                     trigger="visible" />
             </div>
         </div>
 
-
+        <div class="mb-16">
+            <iframe allowfullscreen width=100% height=140px
+                src=" https://www.rcf.fr/economie-et-societe/je-pense-donc-jagis/embed?episodeId=599361"></iframe>
+        </div>
     </div>
-
-
 </template>
