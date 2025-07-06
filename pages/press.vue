@@ -31,6 +31,12 @@
                 </div>
             </div>
         </UCard>
+
+        <ScriptYouTubePlayer video-id="BkLqjWimIB8" :player-vars="{
+            start: 1990,
+            end: 2409,
+        }" trigger="visible">
+        </ScriptYouTubePlayer>
     </div>
 
 </template>
